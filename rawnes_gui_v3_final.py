@@ -495,7 +495,7 @@ def snoop_offset(nes_addr):
 class RawNesGui(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.lang = "de"                # aktuelle Sprache
+        self.lang = "en"                # aktuelle Sprache
         self._i18n = {}                 # widget -> (methode, textschluessel)
         self._connected = False         # fuer Verbindungsstatus-Anzeige
         self.hardcore = tk.BooleanVar(value=HARDCORE_DEFAULT)
