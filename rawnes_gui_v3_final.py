@@ -206,7 +206,7 @@ JASON_ABOUT_DE = (
     "war anderer Meinung. Es ist wichtig, auch Ihren eigenen Sinnen "
     "zu trauen, da Sie Ihre Katze am besten kennen.\n\n"
     "Am 11. Juni 2025 ist er gestorben.\n\n"
-    "Die Katze im Intro ist ein Pixel-Portrait zur Erinnerung an "
+    "Das Software-Logo ist ein Pixel-Portrait zur Erinnerung an "
     "meinen Kater, abgeleitet von einem echten Foto aus dem Jahr "
     "2010 — als wir ihn aus dem Tierheim holten.\n\n"
     "Auch wenn dieses Projekt einen Spenden-Button hat: Die groesste "
@@ -238,7 +238,7 @@ JASON_ABOUT_EN = (
     "opinion. It is important to trust your own senses too, since you "
     "know your cat best.\n\n"
     "He passed away on June 11, 2025.\n\n"
-    "The cat in the intro is a pixel portrait in memory of my cat, "
+    "The Software Logo is a pixel portrait in memory of my cat, "
     "derived from a real photo from 2010 — when we brought him home "
     "from the shelter.\n\n"
     "Even though this project has a donation button: the greatest joy "
@@ -265,12 +265,15 @@ TEXTS = {
         "opt_lang":       "🌐 Deutsch / English",
         "opt_menu":       "⚙ Optionen",
         "opt_setup":      "🎮 FPGA-Mapper einrichten",
-        "opt_support":    "☕ Unterstuetzen",
+        "opt_support":    "☕ Unterstuetzen (aber wenn du darueber nachdenkst, "
+                          "lies bitte vorher about the cat)",
         "opt_about":      "🐾 about the cat",
         "ra_frame":       "RetroAchievements",
         "ra_user":        "Benutzer:",
         "ra_pass":        "Passwort:",
         "ra_login":       "Anmelden",
+        "ra_pw_save":     "Passwort speichern",
+        "ra_pw_saved":    "Passwort gespeichert.",
         "ra_login_busy":  "...",
         "ra_notloggedin": "nicht angemeldet",
         "ra_loggedin":    "angemeldet als {user}",
@@ -380,12 +383,15 @@ TEXTS = {
         "opt_lang":       "🌐 Deutsch / English",
         "opt_menu":       "⚙ Options",
         "opt_setup":      "🎮 Set up FPGA mappers",
-        "opt_support":    "☕ Support",
+        "opt_support":    "☕ Support (but if you are thinking about it, "
+                          "please read about the cat before)",
         "opt_about":      "🐾 about the cat",
         "ra_frame":       "RetroAchievements",
         "ra_user":        "User:",
         "ra_pass":        "Password:",
         "ra_login":       "Log in",
+        "ra_pw_save":     "Save password",
+        "ra_pw_saved":    "Password saved.",
         "ra_login_busy":  "...",
         "ra_notloggedin": "not logged in",
         "ra_loggedin":    "logged in as {user}",
@@ -563,13 +569,14 @@ class RawNesGui(tk.Tk):
             except Exception:
                 pass
         self.title(self.t("win_title"))
-        # Optionen-Menue-Eintraege (Index-basiert: 0 Sprache, 1 Jason,
-        # 2 Separator, 3 Support)
+        # Optionen-Menue-Eintraege (Index-basiert: 0 Sprache, 1 Setup,
+        # 2 Separator, 3 Support, 4 About the cat)
         if getattr(self, "_opt_menu", None) is not None:
             try:
                 self._opt_menu.entryconfigure(0, label=self.t("opt_lang"))
                 self._opt_menu.entryconfigure(1, label=self.t("opt_setup"))
                 self._opt_menu.entryconfigure(3, label=self.t("opt_support"))
+                self._opt_menu.entryconfigure(4, label=self.t("opt_about"))
             except Exception:
                 pass
         # dynamische Labels, die nicht statisch sind
@@ -922,8 +929,6 @@ class RawNesGui(tk.Tk):
             highlightbackground=COL_SEP, highlightthickness=0)
         self.opt_btn.pack(side=tk.RIGHT, padx=(2, 12))
         self._reg(self.opt_btn, "text", "opt_menu")
-        self._mkbtn(opt, "opt_about", self._show_about_cat,
-                    kind="ghost").pack(side=tk.RIGHT, padx=(2, 6))
         menu = tk.Menu(self.opt_btn, tearoff=0, bg=COL_PANEL2,
                        fg=COL_TEXT, activebackground=COL_GREEN_D,
                        activeforeground="#000000", relief=tk.FLAT,
@@ -936,6 +941,7 @@ class RawNesGui(tk.Tk):
             command=lambda: self._check_cores_on_sd(aktiv=True))
         menu.add_separator()                                     # 2
         menu.add_command(command=self._open_support)              # 3
+        menu.add_command(command=self._show_about_cat)            # 4
         self.opt_btn.bind("<Enter>",
                           lambda e: self.opt_btn.configure(bg=COL_PANEL))
         self.opt_btn.bind("<Leave>",
@@ -994,6 +1000,9 @@ class RawNesGui(tk.Tk):
                  relief=tk.FLAT).pack(side="left", padx=(4, 10))
         self.ra_login_btn = self._mkbtn(r, "ra_login", self._ra_login)
         self.ra_login_btn.pack(side="left", padx=(0, 10))
+        self.ra_pw_save_btn = self._mkbtn(r, "ra_pw_save", self._save_password,
+                                          kind="ghost")
+        self.ra_pw_save_btn.pack(side="left", padx=(0, 10))
         self.ra_status_lbl = tk.Label(r, text=self.t("ra_notloggedin"),
                                       fg=COL_DIM, bg=COL_BG)
         self.ra_status_lbl.pack(side="left")
@@ -1211,7 +1220,8 @@ class RawNesGui(tk.Tk):
             with open(CONFIG_PATH, encoding="utf-8") as f:
                 cfg = json.load(f)
             self.ra_user.set(cfg.get("ra_user", ""))
-            self.ra_pass.set(cfg.get("ra_pass", ""))
+            self._saved_pw = cfg.get("ra_pass", "")
+            self.ra_pass.set(self._saved_pw)
             if cfg.get("port"):
                 self.port.set(cfg["port"])
             self._remembered = cfg.get("remembered", {}) or {}
@@ -1230,7 +1240,7 @@ class RawNesGui(tk.Tk):
         try:
             with open(CONFIG_PATH, "w", encoding="utf-8") as f:
                 json.dump({"ra_user": self.ra_user.get().strip(),
-                           "ra_pass": self.ra_pass.get().strip(),
+                           "ra_pass": getattr(self, "_saved_pw", ""),
                            "port": self.port.get().strip(),
                            "lang": self.lang,
                            "sd_root": getattr(self, "_sd_root", None),
@@ -1238,6 +1248,14 @@ class RawNesGui(tk.Tk):
                            "remembered": self._remembered}, f)
         except Exception:
             pass
+
+    def _save_password(self):
+        """Speichert das aktuell eingegebene Passwort explizit in der Config.
+        Wird NICHT automatisch bei jedem _save_config()-Aufruf mitgespeichert
+        -- nur wenn der Nutzer diesen Button bewusst klickt."""
+        self._saved_pw = self.ra_pass.get().strip()
+        self._save_config()
+        self.log(self.t("ra_pw_saved") + "\n")
 
     # ================= RA-Login =================
 
