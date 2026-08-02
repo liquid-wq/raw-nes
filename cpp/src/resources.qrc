@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/intro">
+        <file alias="cat_portrait.png">../resources/cat_portrait.png</file>
+    </qresource>
+    <qresource prefix="/cat">
+        <file alias="cat00.png">cat/cat00.png</file>
+        <file alias="cat01.png">cat/cat01.png</file>
+        <file alias="cat02.png">cat/cat02.png</file>
+        <file alias="cat03.png">cat/cat03.png</file>
+        <file alias="cat04.png">cat/cat04.png</file>
+        <file alias="cat05.png">cat/cat05.png</file>
+        <file alias="cat06.png">cat/cat06.png</file>
+        <file alias="cat07.png">cat/cat07.png</file>
+        <file alias="cat08.png">cat/cat08.png</file>
+        <file alias="cat09.png">cat/cat09.png</file>
+        <file alias="cat10.png">cat/cat10.png</file>
+        <file alias="cat11.png">cat/cat11.png</file>
+    </qresource>
+</RCC>
