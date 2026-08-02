@@ -33,7 +33,7 @@ RAWNES_VERSION = f"v3.0 build {GUI_BUILD}"
 # Update-Pruefung: einfache Zahl in der Datei, hoeher = neuere Version.
 UPDATE_URL = ("https://raw.githubusercontent.com/liquid-wq/data/main/"
               "version_rawnes_python.txt")
-UPDATE_PAGE = "https://liquid-wq.github.io/data/"
+UPDATE_PAGE = "https://github.com/liquid-wq/raw-nes/releases/latest"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(SCRIPT_DIR, "rawnes_gui_config.json")
 ROM_INDEX_PATH = os.path.join(SCRIPT_DIR, "rawnes_rom_index.json")
