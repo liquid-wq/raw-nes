@@ -1,5 +1,7 @@
 # RAW-NES
 
+English | [Deutsch](README.de.md)
+
 RetroAchievements on a real NES, over USB from an EverDrive N8 PRO.
 No emulator involved.
 
