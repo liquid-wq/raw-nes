@@ -9,7 +9,7 @@ bestimmen.
 
 Der Index wird einmal erstellt und in rawnes_rom_index.json abgelegt.
 """
-INDEX_BUILD = 18   # muss zu GUI_BUILD passen
+INDEX_BUILD = 20   # muss zu GUI_BUILD passen
 
 import hashlib
 import json

@@ -27,7 +27,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import webbrowser
 
-GUI_BUILD = 19          # bei jeder Aenderung hochzaehlen
+GUI_BUILD = 20          # bei jeder Aenderung hochzaehlen
 FPGA_BUILD_EXPECTED = 10  # dazu passende Version im FPGA
 RAWNES_VERSION = f"v3.0 build {GUI_BUILD}"
 # Update-Pruefung: einfache Zahl in der Datei, hoeher = neuere Version.
@@ -1853,14 +1853,24 @@ class RawNesGui(tk.Tk):
             self.log(f"Eindeutig nach RA-Abgleich: {treffer[0]['name']}\n")
             return treffer[0]["source"]
 
-        # Wirklich verschiedene Spiele/Sets -- merken, was gewaehlt wurde,
-        # damit die Frage beim naechsten Mal entfaellt.
+        # Fruehere Wahl NUR uebernehmen, wenn NICHT feststeht, dass die
+        # Kandidaten zu verschiedenen RA-Spielen gehoeren. Sonst wird eine
+        # alte Wahl (z.B. die Europe-Fassung) stillschweigend auf ein anderes
+        # gestartetes ROM (z.B. USA) angewendet -- Folge: falsches oder gar
+        # kein Achievement-Set, ohne dass je gefragt wurde. Der Fingerabdruck
+        # allein kann die Varianten nicht trennen, also darf er die
+        # Entscheidung auch nicht ersetzen.
+        verschiedene_ra_spiele = len(eindeutige) > 1
         gemerkt = self._remembered.get(hexs)
-        if gemerkt:
+        if gemerkt and not verschiedene_ra_spiele:
             for t in treffer:
                 if t["source"] == gemerkt:
                     self.log(f"Fruehere Wahl uebernommen: {t['name']}\n")
                     return gemerkt
+        elif gemerkt:
+            self.log("Fruehere Wahl NICHT uebernommen -- die Kandidaten "
+                     "gehoeren zu verschiedenen RA-Spielen. Bitte bewusst "
+                     "auswaehlen.\n")
 
         zeilen = []
         for i, t in enumerate(treffer[:9]):
@@ -1873,7 +1883,8 @@ class RawNesGui(tk.Tk):
             "Mehrere Treffer",
             f"Diese ROMs haben denselben Fingerabdruck, gehoeren aber zu "
             f"verschiedenen RA-Spielen:\n\n{namen}\n\n"
-            f"Nummer waehlen (wird gemerkt):",
+            f"Nummer waehlen (bei verschiedenen RA-Spielen wird die Wahl "
+            f"bewusst NICHT automatisch wiederverwendet):",
             parent=self, minvalue=1, maxvalue=min(9, len(treffer)))
         if not w:
             return None
