@@ -27,7 +27,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import webbrowser
 
-GUI_BUILD = 21          # bei jeder Aenderung hochzaehlen
+GUI_BUILD = 22          # bei jeder Aenderung hochzaehlen
 FPGA_BUILD_EXPECTED = 11  # dazu passende Version im FPGA
 RAWNES_VERSION = f"v3.0 build {GUI_BUILD}"
 # Update-Pruefung: einfache Zahl in der Datei, hoeher = neuere Version.
@@ -2402,7 +2402,10 @@ class RawNesGui(tk.Tk):
         self._stop_event.set()
 
     def _open_support(self):
-        webbrowser.open("https://liquid-wq.github.io/data/")
+        # Direkt zu Ko-fi. Frueher zeigte das auf liquid-wq.github.io/data/ --
+        # das war eine Weiterleitung dorthin, ist inzwischen aber die
+        # Downloadseite.
+        webbrowser.open("https://ko-fi.com/liqui69747")
 
     def _check_update(self):
         """Beim Start pruefen, ob eine neuere Version verfuegbar ist.
