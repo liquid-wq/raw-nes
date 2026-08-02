@@ -27,8 +27,8 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import webbrowser
 
-GUI_BUILD = 20          # bei jeder Aenderung hochzaehlen
-FPGA_BUILD_EXPECTED = 10  # dazu passende Version im FPGA
+GUI_BUILD = 21          # bei jeder Aenderung hochzaehlen
+FPGA_BUILD_EXPECTED = 11  # dazu passende Version im FPGA
 RAWNES_VERSION = f"v3.0 build {GUI_BUILD}"
 # Update-Pruefung: einfache Zahl in der Datei, hoeher = neuere Version.
 UPDATE_URL = ("https://raw.githubusercontent.com/liquid-wq/data/main/"
