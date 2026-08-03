@@ -2,7 +2,7 @@
 
 [English](README.md) | Deutsch
 
-**[Projektseite und Downloads →](https://liquid-wq.github.io/raw-nes/)**
+**[Projektseite und Downloads &rarr;](https://liquid-wq.github.io/raw-nes/)**
 
 RetroAchievements auf einer echten NES, per USB über den EverDrive N8 PRO.
 Kein Emulator im Spiel.
@@ -26,7 +26,7 @@ spielst.
 | Freischalt-Popup | ja | nein |
 | Leaderboard-Sidebar | ja | nur im Log |
 | Live-RAM-Anzeige | ja | ja |
-| Hardcore-Modus | ja | ja |
+| Hardcore-Modus | ja | nein, nur Softcore |
 | Sprachwechsel ohne Neustart | ja | nein |
 
 **Nimm den C++-Port.** Dort findet die Weiterentwicklung statt. Die
