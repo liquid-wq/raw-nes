@@ -2,7 +2,7 @@
 
 English | [Deutsch](README.de.md)
 
-**[Project page and downloads](https://liquid-wq.github.io/raw-nes/)**
+**[Project page and downloads &rarr;](https://liquid-wq.github.io/raw-nes/)**
 
 RetroAchievements on a real NES, over USB from an EverDrive N8 PRO.
 No emulator involved.
@@ -25,7 +25,7 @@ achievements while you play on original hardware.
 | Unlock popup | yes | no |
 | Leaderboard sidebar | yes | log only |
 | Live RAM view | yes | yes |
-| Hardcore mode | yes | yes |
+| Hardcore mode | yes | no, softcore only |
 | Language switch without restart | yes | no |
 
 **Use the C++ port.** It is the version development continues in. The Python
