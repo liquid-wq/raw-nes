@@ -2,6 +2,8 @@
 
 English | [Deutsch](README.de.md)
 
+**[Project page and downloads](https://liquid-wq.github.io/raw-nes/)**
+
 RetroAchievements on a real NES, over USB from an EverDrive N8 PRO.
 No emulator involved.
 
