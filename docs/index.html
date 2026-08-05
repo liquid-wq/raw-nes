@@ -214,7 +214,7 @@
   <div class="wrap">
     <div class="eyebrow">NES · EverDrive N8 PRO · FPGA</div>
     <h1 class="wordmark">RAW-NES</h1>
-    <p class="tagline">RetroAchievements on <b>real NES hardware</b> — no emulator, no ROM patch. A custom FPGA bus-snooper mirrors console RAM live so your original rom stays untouched.</p>
+    <p class="tagline">RetroAchievements on <b>real NES hardware</b> — no emulator, no ROM patch. A custom FPGA bus-snooper mirrors console RAM live so the game itself stays untouched.</p>
     <div class="cta-row">
       <a class="btn" href="https://github.com/liquid-wq/raw-nes" target="_blank" rel="noopener">View on GitHub</a>
       <a class="btn secondary" href="#how">How it works</a>
@@ -231,7 +231,7 @@
           </animateMotion>
         </circle>
         <g class="trace-node"><circle cx="20" cy="45" r="3" fill="#4aff8c"/><text x="8" y="65">CPU</text></g>
-        <g class="trace-node"><circle cx="180" cy="20" r="3" fill="#4aff8c"/><text x="150" y="12">2KB RAM</text></g>
+        <g class="trace-node"><circle cx="180" cy="20" r="3" fill="#4aff8c"/><text x="150" y="12">NES RAM</text></g>
         <g class="trace-node"><circle cx="320" cy="70" r="3" fill="#4aff8c"/><text x="292" y="88">FPGA snoop</text></g>
         <g class="trace-node"><circle cx="460" cy="45" r="3" fill="#4aff8c"/><text x="440" y="35">USB</text></g>
         <g class="trace-node"><circle cx="580" cy="45" r="3" fill="#4aff8c"/><text x="558" y="65">PC</text></g>
@@ -243,18 +243,18 @@
 <section>
   <div class="wrap">
     <h2>What it is</h2>
-    <p>RAW-NES connects your physical NES, an EverDrive N8 PRO, and RetroAchievements. Achievements trigger from the actual console state — the same 2KB of RAM your NES has always used.</p>
+    <p>RAW-NES connects your physical NES, an EverDrive N8 PRO, and RetroAchievements. Achievements trigger from the actual console state — read straight off the CPU bus as the game runs.</p>
   </div>
 </section>
 
 <section id="how">
   <div class="wrap">
     <h2>How it works</h2>
-    <p>A custom FPGA core inside the EverDrive N8 PRO watches the CPU bus directly and mirrors NES RAM into its own block RAM. Your PC reads that mirror live over USB and evaluates the achievement conditions there. Nothing is written to the running game and no code is injected — the cartridge behaves exactly as it would without RAW-NES.</p>
+    <p>A custom FPGA core inside the EverDrive N8 PRO watches the CPU bus directly and mirrors NES RAM into its own block RAM. Your PC reads that mirror live over USB and evaluates the achievement conditions there. Nothing is written to the running game and no code is injected — the game runs exactly as it would without RAW-NES.</p>
     <div class="grid2">
       <div class="card">
         <h3>Bus-snoop, not ROM-patch</h3>
-        <p>Games run completely unmodified. Nothing is injected into cartridge memory.</p>
+        <p>Games run completely unmodified. Nothing is injected into the running game.</p>
       </div>
       <div class="card">
         <h3>Live RAM mirror</h3>
