@@ -14,12 +14,13 @@ alongside the executable and may be replaced with your own build of the same
 Qt version.
 
 --------------------------------------------------------------------------
-EverDrive N8 PRO tools and FPGA sources — Krikzz
-MIT License
-https://github.com/krikzz
+EverDrive N8 PRO developer sources (edn8-pro-pub) — Krikzz
+Copyright (c) Krikzz
+https://github.com/krikzz/edn8-pro-pub
 
-The serial protocol (ed_protocol) and the FPGA mapper cores derive from
-Krikzz's published sources.
+Krikzz publishes these sources for development on EverDrive N8 PRO
+hardware. RAW-NES builds on them. All RAW-NES code is covered by the
+RAW-NES license.
 
 --------------------------------------------------------------------------
 nlohmann/json — Niels Lohmann
@@ -41,7 +42,7 @@ contributors. RAW-NES is not affiliated with or endorsed by
 RetroAchievements.
 
 --------------------------------------------------------------------------
-MIT License (full text, applies to the MIT-licensed components above)
+MIT License (full text, applies to the MIT-licensed components listed above)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
