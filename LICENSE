@@ -1,13 +1,16 @@
-RAW-NES — License
+RAW-NES — License, version 2, effective 10 September 2026
 Copyright (c) 2025-2026 Liqui (github.com/liquid-wq). All rights reserved.
+Releases published before this date carry the license text shipped with them.
 
 The source code of RAW-NES is published so that it can be read, audited and
-learned from. It is NOT free software and NOT open source.
+learned from. It is NOT free software and NOT open source. Publication grants
+no right to pass the code on, or to build anything from it that other people
+receive.
 
 PERMITTED
-  1. Use the compiled program, privately or commercially, at no cost.
+  1. Use the compiled program, privately or commercially.
   2. Read and study the source code.
-  3. Make private modifications for your own use.
+  3. Modify the source code for your own private use.
   4. Quote short excerpts for teaching, reviews or bug reports, with
      attribution.
   5. Link to this repository and to its releases.
@@ -15,26 +18,41 @@ PERMITTED
 NOT PERMITTED WITHOUT PRIOR WRITTEN PERMISSION
   6. Redistributing the source code, in whole or in substantial part,
      modified or unmodified.
-  7. Publishing derivative works, forks or ports.
-  8. Redistributing the compiled program, including mirrors, bundles,
-     installers and repackaged archives. Link to the official releases
-     instead.
-  9. Removing or altering copyright notices, the version string or the
+  7. Publishing or otherwise passing on derivative works, forks or ports,
+     including ports to other hardware or platforms.
+  8. Redistributing the compiled program or the FPGA core files shipped
+     with it, including mirrors, bundles, installers and repackaged archives.
+  9. Reverse engineering, decompiling or disassembling the compiled program
+     or the FPGA core files shipped with it, and extracting code or data
+     embedded in either. The Qt paragraph below is the only exception.
+ 10. Distributing or selling any device, product or service that contains
+     this code or a work derived from it.
+ 11. Removing or altering copyright notices, the version string or the
      "about the cat" text.
 
+Item 3 ends at your own machine. As soon as anything you built from this code
+reaches another person, items 6 to 10 apply. Pass on the link to this
+repository or its releases, not a copy.
+
 Permission for any of the above may be requested through GitHub Issues on
-github.com/liquid-wq/raw-nes. It is usually granted for non-commercial
-purposes.
+github.com/liquid-wq/raw-nes. Each request is decided individually. No
+permission is implied until it is given in writing.
+
+The permissions in items 1 to 5 end automatically if you breach this license.
 
 THIRD-PARTY COMPONENTS
 This program includes and builds upon third-party software that carries its
 own licenses. Those licenses govern those components, not this one. See
 THIRD-PARTY-NOTICES.txt, which is distributed with every release.
 
-Qt is used under the GNU Lesser General Public License v3. Nothing in this
-license restricts the rights the LGPL grants you regarding the Qt libraries:
-you may replace the bundled Qt DLLs with your own build, and you may reverse
-engineer this program to the extent necessary to debug such modifications.
+Qt is used under the GNU Lesser General Public License v3. As that license
+requires, nothing here restricts your right to replace the bundled Qt
+libraries with your own build, or to reverse engineer this program as far as
+is necessary to debug such a replacement. This is the sole exception to
+item 9, and it covers the Qt libraries and their integration only.
+
+Nothing in this license restricts rights that applicable law grants you and
+that cannot be excluded by agreement.
 
 NO WARRANTY
 THE PROGRAM IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -43,6 +61,6 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT
 OF OR IN CONNECTION WITH THE PROGRAM OR ITS USE.
 
-RAW-NES writes to the FPGA mapper files on your EverDrive SD card. It backs
+RAW-NES writes the FPGA mapper files to your EverDrive SD card. It backs
 up the originals first and can restore them, but you use it at your own risk.
 RAW-NES is not affiliated with RetroAchievements, Krikzz or Nintendo.
