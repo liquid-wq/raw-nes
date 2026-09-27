@@ -25,8 +25,8 @@ PC aus und schaltet Achievements auf den RetroAchievements-Servern frei,
 während du auf Originalhardware spielst.
 
 * Live-Verfolgung der Achievements, einschließlich Hit-Count-Bedingungen
-* Leaderboards
-* Hardcore-Modus mit Prüfung, ob Savestates und Cheats abgeschaltet sind
+* Leaderboards (Anzeige im Tool, siehe Hardcore-Modus unten)
+* Hardcore-Modus: geplant, noch nicht aktiv (siehe unten)
 * Automatische Spielerkennung über den Vektor-Fingerabdruck des ROMs
 * Deutsch und Englisch, ohne Neustart umschaltbar
 
@@ -66,8 +66,16 @@ die Sammlung ändert.
 
 ## Hardcore-Modus
 
-Leaderboards und Hardcore-Freischaltungen zählen nur, wenn Savestates und
-Cheats am EverDrive selbst abgeschaltet sind. Das geschieht im
+Hardcore ist geplant, aber noch nicht aktiv. RetroAchievements wertet
+Hardcore-Freischaltungen und Leaderboard-Einträge nur von Programmen, die es
+freigegeben hat, und ein Programm muss dafür mindestens sechs Monate öffentlich
+verfügbar sein. Dafür ist RAW-NES noch zu neu, außerdem muss es eine Reihe von
+Prüfungen durch RetroAchievements bestehen. Bis dahin wird jede Freischaltung
+als Softcore gebucht, und Leaderboard-Einträge werden nicht gespeichert.
+
+Die Grundlage ist schon vorhanden. Leaderboards und Hardcore-Freischaltungen
+werden nur zählen, wenn Savestates und Cheats am EverDrive selbst abgeschaltet
+sind. Das geschieht im
 EverDrive-System-Menü: *Filebrowser -> \[SELECT] -> Options -> "In Game Menu"
 aus, "Cheats" aus*. Das Ingame-Menü ist etwas anderes.
 

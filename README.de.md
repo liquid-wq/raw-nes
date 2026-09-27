@@ -26,7 +26,7 @@ spielst.
 | Freischalt-Popup | ja | nein |
 | Leaderboard-Sidebar | ja | nur im Log |
 | Live-RAM-Anzeige | ja | ja |
-| Hardcore-Modus | ja | nein, nur Softcore |
+| Hardcore-Modus | geplant, noch nicht aktiv | nein, nur Softcore |
 | Sprachwechsel ohne Neustart | ja | nein |
 
 **Nimm den C++-Port.** Dort findet die Weiterentwicklung statt. Die

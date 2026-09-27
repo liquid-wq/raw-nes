@@ -24,8 +24,8 @@ achievements against the RetroAchievements servers while you play on
 original hardware.
 
 * Live achievement tracking, including hit-count conditions
-* Leaderboards
-* Hardcore mode, with a check that savestates and cheats are switched off
+* Leaderboards (shown in the tool, see Hardcore mode below)
+* Hardcore mode: planned, not active yet (see below)
 * Automatic game detection from the ROM's vector fingerprint
 * German and English, switchable without restarting
 
@@ -65,8 +65,15 @@ collection changes.
 
 ## Hardcore mode
 
-Leaderboards and hardcore unlocks only count when savestates and cheats are
-switched off on the EverDrive itself. Switch them off in the EverDrive system
+Hardcore is planned, but not active yet. RetroAchievements only counts
+Hardcore unlocks and leaderboard entries from clients it has approved, and a
+client has to be publicly available for at least six months before it can be
+considered. RAW-NES is still too new for that, and it also has to pass a set
+of checks by RetroAchievements. Until then, every unlock is recorded as
+Softcore and leaderboard entries are not saved.
+
+The groundwork is already in place. Leaderboards and hardcore unlocks will
+only count when savestates and cheats are switched off on the EverDrive itself. Switch them off in the EverDrive system
 menu: *Filebrowser -> \[SELECT] -> Options -> "In Game Menu" off, "Cheats"
 off*. The in-game menu is not the same thing.
 

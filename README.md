@@ -25,7 +25,7 @@ achievements while you play on original hardware.
 | Unlock popup | yes | no |
 | Leaderboard sidebar | yes | log only |
 | Live RAM view | yes | yes |
-| Hardcore mode | yes | no, softcore only |
+| Hardcore mode | planned, not active yet | no, softcore only |
 | Language switch without restart | yes | no |
 
 **Use the C++ port.** It is the version development continues in. The Python

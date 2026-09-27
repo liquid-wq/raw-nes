@@ -75,9 +75,8 @@ Skipped this or need to redo it later? Open the options menu and choose
 
 ### Modes
 
-RAW-NES runs in **Softcore** mode. Hardcore is not yet available: the EverDrive
-N8 PRO offers savestates, which conflict with hardcore rules, and reliable
-savestate detection is still in development.
+The Python version runs in **Softcore** mode only. Hardcore is planned for the
+C++ port, but not active yet, see [its README](../cpp/README.md#hardcore-mode).
 
 ### Known limitations
 
@@ -172,9 +171,8 @@ einrichten"** wählen — startet dieselbe Einrichtung erneut.
 
 ### Modi
 
-RAW-NES läuft im **Softcore**-Modus. Hardcore ist noch nicht verfügbar: Der
-EverDrive N8 PRO bietet Savestates, die den Hardcore-Regeln widersprechen, und
-eine zuverlässige Savestate-Erkennung ist noch in Entwicklung.
+Die Python-Fassung läuft nur im **Softcore**-Modus. Hardcore ist für den
+C++-Port geplant, aber noch nicht aktiv, siehe [dessen README](../cpp/README.de.md#hardcore-modus).
 
 ### Bekannte Einschränkungen
 
