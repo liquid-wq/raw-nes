@@ -206,9 +206,14 @@
   @media (prefers-reduced-motion: reduce){
     .trace-pulse{ animation: none; opacity: 1; }
   }
+  /* Zurueck zur Uebersicht, oben links */
+  .back{position:fixed;top:14px;left:16px;z-index:10;font-size:13px;letter-spacing:.06em;color:var(--signal-dim);text-decoration:none;border:1px solid var(--border);background:rgba(10,13,11,.85);padding:6px 12px;transition:color .14s,border-color .14s}
+  .back:hover,.back:focus-visible{color:var(--signal);border-color:var(--signal)}
 </style>
 </head>
 <body>
+<a class="back" href="https://liquid-wq.github.io/" aria-label="Back to all projects">&larr; All projects</a>
+
 
 <header class="hero">
   <div class="wrap">
