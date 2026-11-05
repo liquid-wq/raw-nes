@@ -1,4 +1,4 @@
-RAW-NES — License, version 2, effective 10 September 2026
+RAW-NES — License, version 3, effective 5 November 2026
 Copyright (c) 2025-2026 Liqui (github.com/liquid-wq). All rights reserved.
 Releases published before this date carry the license text shipped with them.
 
@@ -24,7 +24,7 @@ NOT PERMITTED WITHOUT PRIOR WRITTEN PERMISSION
      with it, including mirrors, bundles, installers and repackaged archives.
   9. Reverse engineering, decompiling or disassembling the compiled program
      or the FPGA core files shipped with it, and extracting code or data
-     embedded in either. The Qt paragraph below is the only exception.
+     embedded in either.
  10. Distributing or selling any device, product or service that contains
      this code or a work derived from it.
  11. Removing or altering copyright notices, the version string or the
@@ -44,12 +44,6 @@ THIRD-PARTY COMPONENTS
 This program includes and builds upon third-party software that carries its
 own licenses. Those licenses govern those components, not this one. See
 THIRD-PARTY-NOTICES.txt, which is distributed with every release.
-
-Qt is used under the GNU Lesser General Public License v3. As that license
-requires, nothing here restricts your right to replace the bundled Qt
-libraries with your own build, or to reverse engineer this program as far as
-is necessary to debug such a replacement. This is the sole exception to
-item 9, and it covers the Qt libraries and their integration only.
 
 Nothing in this license restricts rights that applicable law grants you and
 that cannot be excluded by agreement.

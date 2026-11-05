@@ -1,0 +1,29 @@
+// ERZEUGT die Ressourcendatei -- nicht direkt bearbeiten, sondern app.rc.in.
+//
+// Alles, was die Qt-Fassung neben der Exe brauchte, steckt hier drin:
+// Programmsymbol, die fuenf FPGA-Kerne (frueher Ordner cores\) und die zwoelf
+// Intro-Bilder (frueher Qt-Ressourcen). Die Kennungen stehen in ressourcen.h.
+//
+// Die Pfade setzt CMake ein, weil windres relative Pfade nicht verlaesslich
+// gegen den Ort dieser Datei aufloest.
+
+1 ICON "@ASSETS_DIR@/app.ico"
+
+100 RCDATA "@ASSETS_DIR@/cores/000.RBF"
+101 RCDATA "@ASSETS_DIR@/cores/001.RBF"
+102 RCDATA "@ASSETS_DIR@/cores/004.RBF"
+103 RCDATA "@ASSETS_DIR@/cores/005.RBF"
+104 RCDATA "@ASSETS_DIR@/cores/021.RBF"
+
+200 RCDATA "@ASSETS_DIR@/cat/cat00.png"
+201 RCDATA "@ASSETS_DIR@/cat/cat01.png"
+202 RCDATA "@ASSETS_DIR@/cat/cat02.png"
+203 RCDATA "@ASSETS_DIR@/cat/cat03.png"
+204 RCDATA "@ASSETS_DIR@/cat/cat04.png"
+205 RCDATA "@ASSETS_DIR@/cat/cat05.png"
+206 RCDATA "@ASSETS_DIR@/cat/cat06.png"
+207 RCDATA "@ASSETS_DIR@/cat/cat07.png"
+208 RCDATA "@ASSETS_DIR@/cat/cat08.png"
+209 RCDATA "@ASSETS_DIR@/cat/cat09.png"
+210 RCDATA "@ASSETS_DIR@/cat/cat10.png"
+211 RCDATA "@ASSETS_DIR@/cat/cat11.png"

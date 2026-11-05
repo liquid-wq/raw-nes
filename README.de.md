@@ -4,36 +4,36 @@
 
 **[Projektseite und Downloads &rarr;](https://liquid-wq.github.io/raw-nes/)**
 
-RetroAchievements auf einer echten NES, per USB über den EverDrive N8 PRO.
-Kein Emulator im Spiel.
+RetroAchievements auf einem echten NES, über USB von einem EverDrive N8 PRO.
+Ohne Emulator.
 
-![RAW-NES in Aktion](docs/rawnes_uebersicht.gif)
+![RAW-NES im Einsatz](docs/rawnes_uebersicht.gif)
 
-Ein eigener FPGA-Kern auf dem EverDrive belauscht den CPU-Bus der NES und
-spiegelt den Arbeitsspeicher der Konsole in FPGA-Block-RAM. RAW-NES liest
-diese Werte live über USB, wertet die RetroAchievements-Bedingungen auf dem
-PC aus und schaltet Achievements frei, während du auf Originalhardware
-spielst.
+Eigene FPGA-Kerne auf dem EverDrive verfolgen die NES-CPU und führen Buch
+über den Arbeitsspeicher der Konsole. RAW-NES liest diese Werte über USB,
+wertet die Bedingungen von RetroAchievements am PC aus und schaltet
+Achievements frei, während du auf Originalhardware spielst.
 
 ---
 
-## Zwei Fassungen
+## Neu in 3.0.0
 
-| | [**C++-Port**](cpp/) | [Python-Fassung](python/) |
-|---|---|---|
-| Installation | keine, nur entpacken | Python erforderlich |
-| Achievement-Liste mit Badges | ja | nur im Log |
-| Freischalt-Popup | ja | nein |
-| Leaderboard-Sidebar | ja | nur im Log |
-| Live-RAM-Anzeige | ja | ja |
-| Hardcore-Modus | geplant, noch nicht aktiv | nein, nur Softcore |
-| Sprachwechsel ohne Neustart | ja | nein |
-
-**Nimm den C++-Port.** Dort findet die Weiterentwicklung statt. Die
-Python-Fassung funktioniert weiterhin und bleibt verfügbar, neue Funktionen
-kommen aber in den Port.
-
-Downloads für beide: **[Releases](https://github.com/liquid-wq/raw-nes/releases)**
+* **Eine einzige Programmdatei.** Keine Installation, keine
+  Laufzeitbibliotheken. Die FPGA-Kerne sind eingebaut und werden aus dem
+  Programm heraus auf die SD-Karte gebracht.
+* **Exakte Spielerkennung.** RAW-NES fragt das EverDrive, welche Datei
+  gestartet wurde, und erkennt das Spiel an seinem RetroAchievements-Hash.
+  Kein Auswählen mehr zwischen ROMs, die sich ähneln.
+* **Jedes Bild zählt.** Die neuen Kerne liefern die Werte jedes einzelnen
+  Bildes. Kurze Ereignisse gehen nicht mehr verloren, und Werte aus
+  verschiedenen Bildern werden nie vermischt.
+* **Sicherere Freischaltungen.** Konsole ausschalten oder ein Spiel verlassen
+  kann keine Achievements mehr auslösen.
+* **Startet von selbst.** RAW-NES verbindet sich selbst mit dem EverDrive und
+  beginnt die Überwachung, sobald ein Spiel läuft. Die Statuszeile zeigt, ob
+  die Konsole aus ist, im EverDrive-Menü steht oder überwacht wird.
+* **Sieben Sprachen:** Englisch, Deutsch, Spanisch, Portugiesisch (Brasilien),
+  Französisch, Italienisch, Polnisch.
 
 ---
 
@@ -43,33 +43,52 @@ Downloads für beide: **[Releases](https://github.com/liquid-wq/raw-nes/releases
 * EverDrive N8 PRO mit USB-Kabel zum PC
 * Windows 64-Bit
 * Ein RetroAchievements-Konto
-* Deine NES-ROM-Sammlung auf dem PC (`.nes`, `.zip`, `.7z`)
 
 ---
 
 ## Erste Schritte
 
-Release herunterladen, entpacken und der Einrichtung in der README der
-gewählten Fassung folgen: [`cpp/README.de.md`](cpp/README.de.md) oder
-[`python/README.md`](python/README.md).
+1. Release herunterladen und entpacken.
+2. `raw-nes.exe` starten. Die Ersteinrichtung fragt nach der Sprache und
+   bringt die FPGA-Kerne auf die SD-Karte des EverDrive.
+3. Bei RetroAchievements anmelden.
+4. SD-Karte zurück ins EverDrive und ein Spiel über das EverDrive-Menü
+   starten. RAW-NES erkennt es und beginnt die Überwachung.
 
-Kurz gefasst: FPGA-Kerne aus dem Programm heraus auf die EverDrive-SD-Karte
-einrichten, bei RetroAchievements anmelden, ROM-Ordner einmalig indizieren,
-Spiel auf der Konsole starten, dann den Monitor starten.
+Unterstützte Mapper-Gruppen: NROM und ähnliche (000), MMC1 und weitere (001),
+MMC3 (004), MMC5 (005), Konami VRC (021).
+
+Der Hardcore-Modus ist geplant, aber noch nicht aktiv: Freischaltungen
+zählen als Softcore, Leaderboard-Einträge werden nicht eingereicht.
+
+---
+
+## Ältere Fassungen
+
+Die Qt-Fassung (2.x) und die Python-Fassung liegen nur noch zum Nachlesen in
+[`legacy/`](legacy/). Sie werden nicht mehr gepflegt. Bitte 3.0.0 verwenden.
+
+---
+
+## Selbst bauen
+
+Der Quelltext ist veröffentlicht, damit man sehen kann, was das Programm tut.
+Zum Selbstbauen braucht es MinGW-w64, CMake, Ninja, Dear ImGui, miniz und
+nlohmann/json; siehe [`CMakeLists.txt`](CMakeLists.txt).
 
 ---
 
 ## Fehler melden
 
-Ausschließlich über GitHub Issues, mit Spielname, verwendeter Fassung und dem
-Log aus dem Programmfenster.
+Nur über GitHub Issues, mit Spielname, Version und dem Log aus dem
+Programmfenster ("Log kopieren").
 
 ---
 
 ## Lizenz
 
-Quelloffen einsehbar, aber nicht frei verwendbar. Siehe [`LICENSE`](LICENSE).
-Fremdkomponenten und deren Lizenzen stehen in
+Quelltext einsehbar, nicht Open Source. Siehe [`LICENSE`](LICENSE).
+Fremdkomponenten und ihre Lizenzen stehen in
 [`THIRD-PARTY-NOTICES.txt`](THIRD-PARTY-NOTICES.txt).
 
-Erstellt von Liqui.
+Gebaut von Liqui.

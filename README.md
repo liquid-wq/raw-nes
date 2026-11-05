@@ -9,29 +9,30 @@ No emulator involved.
 
 ![RAW-NES in action](docs/rawnes_uebersicht.gif)
 
-A custom FPGA core on the EverDrive snoops the NES CPU bus and mirrors the
-console's RAM into block RAM. RAW-NES reads those values live over USB,
-evaluates the RetroAchievements condition sets on the PC, and unlocks
-achievements while you play on original hardware.
+Custom FPGA cores on the EverDrive follow the NES CPU and keep track of the
+console's RAM. RAW-NES reads those values over USB, evaluates the
+RetroAchievements condition sets on the PC, and unlocks achievements while
+you play on original hardware.
 
 ---
 
-## Two versions
+## What's new in 3.0.0
 
-| | [**C++ port**](cpp/) | [Python version](python/) |
-|---|---|---|
-| Install | none, just unpack | needs Python |
-| Achievement list with badges | yes | log only |
-| Unlock popup | yes | no |
-| Leaderboard sidebar | yes | log only |
-| Live RAM view | yes | yes |
-| Hardcore mode | planned, not active yet | no, softcore only |
-| Language switch without restart | yes | no |
-
-**Use the C++ port.** It is the version development continues in. The Python
-version still works and stays available, but new features go into the port.
-
-Downloads for both: **[Releases](https://github.com/liquid-wq/raw-nes/releases)**
+* **One program file.** No installation, no runtime libraries. The FPGA
+  cores are built in and set up onto the SD card from inside the program.
+* **Exact game detection.** RAW-NES asks the EverDrive which file was
+  started and identifies the game by its RetroAchievements hash. No more
+  picking between ROMs that look alike.
+* **Every frame counts.** The new cores hand over the values of every single
+  frame, so short events are no longer missed and values from different
+  frames are never mixed.
+* **Safer unlocks.** Switching the console off or leaving a game can no
+  longer trigger achievements.
+* **Starts by itself.** RAW-NES connects to the EverDrive on its own and
+  starts monitoring as soon as a game runs. The status line shows whether
+  the console is off, in the EverDrive menu, or being monitored.
+* **Seven languages:** English, German, Spanish, Portuguese (Brazil), French,
+  Italian, Polish.
 
 ---
 
@@ -41,26 +42,46 @@ Downloads for both: **[Releases](https://github.com/liquid-wq/raw-nes/releases)*
 * EverDrive N8 PRO with a USB cable to the PC
 * Windows 64-bit
 * A RetroAchievements account
-* Your NES ROM collection on the PC (`.nes`, `.zip`, `.7z`)
 
 ---
 
 ## Getting started
 
-Download the release, unpack it, and follow the setup in the README of the
-version you picked: [`cpp/README.md`](cpp/README.md) or
-[`python/README.md`](python/README.md).
+1. Download the release and unpack it.
+2. Start `raw-nes.exe`. The first-run setup asks for your language and
+   installs the FPGA cores onto the EverDrive SD card.
+3. Log in to RetroAchievements.
+4. Put the SD card back into the EverDrive and start a game from the
+   EverDrive menu. RAW-NES detects it and starts monitoring.
 
-In short: install the FPGA cores onto the EverDrive SD card from inside the
-program, log in to RetroAchievements, index your ROM folder once, start a
-game on the console, then start the monitor.
+Supported mapper groups: NROM and similar (000), MMC1 and others (001),
+MMC3 (004), MMC5 (005), Konami VRC (021).
+
+Hardcore mode is planned but not active yet: unlocks are recorded as
+softcore, and leaderboard entries are not submitted.
+
+---
+
+## Older versions
+
+The Qt version (2.x) and the Python version are kept in
+[`legacy/`](legacy/) for reference only. They are no longer maintained.
+Please use 3.0.0.
+
+---
+
+## Building
+
+The source is published so you can see what the program does. To build it
+yourself you need MinGW-w64, CMake, Ninja, Dear ImGui, miniz and
+nlohmann/json; see [`CMakeLists.txt`](CMakeLists.txt).
 
 ---
 
 ## Reporting bugs
 
-GitHub Issues only, with the game name, which version you are running, and
-the log from the program window.
+GitHub Issues only, with the game name, the version, and the log from the
+program window ("Copy log").
 
 ---
 

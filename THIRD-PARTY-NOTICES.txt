@@ -4,23 +4,16 @@ This program includes or derives from the following components. Each remains
 under its own license; those licenses are not affected by the RAW-NES license.
 
 --------------------------------------------------------------------------
-Qt 6 — The Qt Company Ltd. and contributors
-GNU Lesser General Public License, version 3
-https://www.qt.io/  ·  https://www.gnu.org/licenses/lgpl-3.0.html
+Dear ImGui — Omar Cornut and contributors
+MIT License
+https://github.com/ocornut/imgui
 
-Qt is used as unmodified dynamic libraries (Qt6Core, Qt6Gui, Qt6Widgets,
-Qt6Network, Qt6SerialPort, Qt6Svg and the accompanying plugins). They ship
-alongside the executable and may be replaced with your own build of the same
-Qt version.
+Copyright (c) 2014-2026 Omar Cornut
 
 --------------------------------------------------------------------------
-EverDrive N8 PRO developer sources (edn8-pro-pub) — Krikzz
-Copyright (c) Krikzz
-https://github.com/krikzz/edn8-pro-pub
-
-Krikzz publishes these sources for development on EverDrive N8 PRO
-hardware. RAW-NES builds on them. All RAW-NES code is covered by the
-RAW-NES license.
+miniz — Rich Geldreich and contributors
+MIT License
+https://github.com/richgel999/miniz
 
 --------------------------------------------------------------------------
 nlohmann/json — Niels Lohmann
@@ -28,9 +21,51 @@ MIT License
 https://github.com/nlohmann/json
 
 --------------------------------------------------------------------------
-miniz — Rich Geldreich and contributors
+mingw-w64 winpthreads (runtime library, linked into the program)
+https://www.mingw-w64.org
+
+Copyright (c) 2011 mingw-w64 project
 MIT License
-https://github.com/richgel999/miniz
+
+Parts of this library are derived from:
+Posix Threads library for Microsoft Windows
+(C) 2010 Lockless Inc. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+ * Neither the name of Lockless Inc. nor the names of its contributors may be
+   used to endorse or promote products derived from this software without
+   specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The compiler's own runtime (libgcc, libstdc++) is linked under the GCC
+Runtime Library Exception and needs no notice.
+
+--------------------------------------------------------------------------
+EverDrive N8 PRO developer sources (edn8-pro-pub) — Krikzz
+Copyright (c) Krikzz
+https://github.com/krikzz/edn8-pro-pub
+
+Krikzz publishes these sources for development on EverDrive N8 PRO
+hardware. The FPGA cores shipped with RAW-NES are built on them, and the
+program uses the USB commands documented there. All RAW-NES code is covered
+by the RAW-NES license.
 
 --------------------------------------------------------------------------
 RetroAchievements
