@@ -23,12 +23,12 @@ Achievements frei, während du auf Originalhardware spielst.
   Programm heraus auf die SD-Karte gebracht.
 * **Exakte Spielerkennung.** RAW-NES fragt das EverDrive, welche Datei
   gestartet wurde, und erkennt das Spiel an seinem RetroAchievements-Hash.
-  Kein Auswählen mehr zwischen ROMs, die sich ähneln.
+  Es wählt immer selbst das richtige Spiel.
 * **Jedes Bild zählt.** Die neuen Kerne liefern die Werte jedes einzelnen
-  Bildes. Kurze Ereignisse gehen nicht mehr verloren, und Werte aus
+  Bildes. Auch kürzeste Ereignisse werden erfasst, und Werte aus
   verschiedenen Bildern werden nie vermischt.
-* **Sicherere Freischaltungen.** Konsole ausschalten oder ein Spiel verlassen
-  kann keine Achievements mehr auslösen.
+* **Sichere Freischaltungen.** Ausgewertet wird nur, solange wirklich ein
+  Spiel läuft. Konsole ausschalten oder ein Spiel verlassen löst nie etwas aus.
 * **Startet von selbst.** RAW-NES verbindet sich selbst mit dem EverDrive und
   beginnt die Überwachung, sobald ein Spiel läuft. Die Statuszeile zeigt, ob
   die Konsole aus ist, im EverDrive-Menü steht oder überwacht wird.

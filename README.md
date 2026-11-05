@@ -21,13 +21,14 @@ you play on original hardware.
 * **One program file.** No installation, no runtime libraries. The FPGA
   cores are built in and set up onto the SD card from inside the program.
 * **Exact game detection.** RAW-NES asks the EverDrive which file was
-  started and identifies the game by its RetroAchievements hash. No more
-  picking between ROMs that look alike.
+  started and identifies the game by its RetroAchievements hash. It always
+  picks the right game on its own.
 * **Every frame counts.** The new cores hand over the values of every single
-  frame, so short events are no longer missed and values from different
+  frame, so even the shortest events are caught and values from different
   frames are never mixed.
-* **Safer unlocks.** Switching the console off or leaving a game can no
-  longer trigger achievements.
+* **Safe unlocks.** Achievements are only evaluated while a game is
+  actually running. Switching the console off or leaving a game never
+  triggers anything.
 * **Starts by itself.** RAW-NES connects to the EverDrive on its own and
   starts monitoring as soon as a game runs. The status line shows whether
   the console is off, in the EverDrive menu, or being monitored.
