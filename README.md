@@ -71,14 +71,6 @@ Please use 3.0.0.
 
 ---
 
-## Building
-
-The source is published so you can see what the program does. To build it
-yourself you need MinGW-w64, CMake, Ninja, Dear ImGui, miniz and
-nlohmann/json; see [`CMakeLists.txt`](CMakeLists.txt).
-
----
-
 ## Reporting bugs
 
 GitHub Issues only, with the game name, the version, and the log from the

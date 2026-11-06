@@ -70,14 +70,6 @@ Die Qt-Fassung (2.x) und die Python-Fassung liegen nur noch zum Nachlesen in
 
 ---
 
-## Selbst bauen
-
-Der Quelltext ist veröffentlicht, damit man sehen kann, was das Programm tut.
-Zum Selbstbauen braucht es MinGW-w64, CMake, Ninja, Dear ImGui, miniz und
-nlohmann/json; siehe [`CMakeLists.txt`](CMakeLists.txt).
-
----
-
 ## Fehler melden
 
 Nur über GitHub Issues, mit Spielname, Version und dem Log aus dem
